@@ -158,7 +158,7 @@ class FileManager
             // check file type if need
             if ($this->configRepository->getAllowFileTypes()
                 && !in_array(
-                    $file->getClientOriginalExtension(),
+                    strtolower($file->getClientOriginalExtension()),
                     $this->configRepository->getAllowFileTypes()
                 )
             ) {
